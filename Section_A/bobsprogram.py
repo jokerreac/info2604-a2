@@ -17,6 +17,7 @@ try:
     # Request Alice's public key
     socket_public_key.connect((host, port_public_key))
     socket_public_key.sendall('REQUEST_PUBLIC_KEY'.encode('utf-8'))
+    print('> Requested public key')
 
     alice_public_key = socket_public_key.recv(1024)
     alice_public_key = serialization.load_pem_public_key(alice_public_key)
